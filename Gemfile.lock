@@ -38,6 +38,8 @@ GEM
       execjs
     coffee-script-source (1.6.3)
     commonjs (0.2.6)
+    crack (0.4.1)
+      safe_yaml (~> 0.9.0)
     erubis (2.7.0)
     execjs (1.4.0)
       multi_json (~> 1.0)
@@ -60,7 +62,6 @@ GEM
     mime-types (1.23)
     multi_json (1.7.7)
     mysql (2.9.1)
-    nokogiri (1.5.10)
     pg (0.15.1)
     polyglot (0.3.3)
     rack (1.4.5)
@@ -89,6 +90,9 @@ GEM
     rdoc (3.12.2)
       json (~> 1.4)
     ref (1.0.5)
+    rest-client (1.6.7)
+      mime-types (>= 1.16)
+    safe_yaml (0.9.4)
     sass (3.2.9)
     sass-rails (3.2.6)
       railties (~> 3.2.0)
@@ -122,12 +126,13 @@ PLATFORMS
 
 DEPENDENCIES
   coffee-rails (~> 3.2.1)
+  crack
   jquery-rails
   less-rails
   mysql
-  nokogiri
   pg
   rails (= 3.2.13)
+  rest-client
   sass-rails (~> 3.2.3)
   therubyracer
   twitter-bootstrap-rails

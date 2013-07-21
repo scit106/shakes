@@ -13,8 +13,10 @@ group :production do
 	gem 'pg'
 end
 
-gem 'nokogiri'
-
+# Gems for parsing xml
+# gem 'nokogiri'
+gem 'crack'
+gem 'rest-client'
 
 # Gems used only for assets and not required
 # in production environments by default.
