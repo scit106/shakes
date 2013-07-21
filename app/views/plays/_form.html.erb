@@ -1,0 +1,5 @@
+<%= form_for @play, :html => {:multipart => true} do |f| %>
+	<p><%= f.label :source %></p>
+	<p><%= f.text_field :source %></p>
+	<%= f.submit %>
+<% end %>

@@ -13,6 +13,7 @@ group :production do
 	gem 'pg'
 end
 
+gem 'nokogiri'
 
 
 # Gems used only for assets and not required
