@@ -5,11 +5,11 @@ class PlaysController < ApplicationController
 
 	def new
 		@play = Play.new
+		@title = Play.play_title
 	end
 
 	def create
 		@play = Play.new(params[:play])
-		@title = Play.play_title
 
 	respond_to do |format|
 			if @play.save

@@ -1,3 +1,7 @@
 <h1>Plays</h1>
 
 <p><%= Play.play_title %></p>
+
+<% Play.play_parser.at_xpath("PERSONAE/PERSONA").each do |x| %>
+<p><%= x.text %></p>
+<% end %>
