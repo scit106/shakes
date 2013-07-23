@@ -5,7 +5,8 @@ class Act < ActiveRecord::Base
   def self.build act
   	a= Act.new
   	a.title = act["TITLE"]
-
+  	a.save
+  	return a
   end
 
 end

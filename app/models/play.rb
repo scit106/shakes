@@ -27,7 +27,9 @@ def self.sample
 	source = 'http://www.cafeconleche.org/examples/shakespeare/j_caesar.xml'
 	xml_string = RestClient.get(source)
 	parsed_hash = Crack::XML.parse(xml_string)
-		acts = parsed_hash["PLAY"]["ACT"]
+		acts = parsed_hash["PLAY"]["ACT"].each do |act|
+			puts act
+		end
 		# play.acts
 		# parsed_hash["PLAY"]["ACT"].each do |act|
 		# 	play.acts << Act.build act
@@ -39,12 +41,6 @@ def self.sample
 
 	return acts
 end
-
-# def self.play_title
-# 	@name = play_parser["PLAY"]["TITLE"]
-
-# 	return @name
-# end
 
 # #This returns the character names from the intro, but not the names used for lines
 # def self.play_personae
@@ -60,29 +56,7 @@ end
 # 	return @personae
 # end
 
-# #to get an array of all SPEAKERS in the play, that is each character who has lines
-# def self.speakers
-# 	# @speaker = Array.new
+# Need to get an array of all SPEAKERS in the play, that is each character who has lines
 
-# 	a = play_parser["PLAY"]["ACT"] #this is an array with all acts
-
-# 	scenes_array = Array.new
-# 	# b = Hash.new
-# 	speeches_array = Array.new
-# 	speakers_array = Array.new
-# 	a.each do |x|
-# 		scenes_array += x["SCENE"]
-# 	end
-
-# 	# b = scenes_array.flatten
-# 	# b = scenes_array[0]
-# 	# scenes_array.each do |y|
-# 	# 	speeches_array += y["SPEECH"]
-# 	# end
-
-
-# 	return scenes_array
-# 	# return @speaker
-# end
 
 end

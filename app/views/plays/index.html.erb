@@ -1,3 +1,5 @@
 <h1>Plays</h1>
 
-<%= Play.sample %>
+<% @plays.each do |play| %>
+<p><%= play.title %>, <%= play.source %></p>
+<% end %>
