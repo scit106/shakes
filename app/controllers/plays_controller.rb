@@ -5,21 +5,13 @@ class PlaysController < ApplicationController
 
 	def new
 		@play = Play.new
-		@title = Play.play_title
 	end
 
 	def create
-		@play = Play.new(params[:play])
+		play = Play.build(params[:play][:source])
+		play.save
 
-	respond_to do |format|
-			if @play.save
-				redirect_to plays_path
-            else
-			    format.html  { render :action => "new" }
-			    format.json  { render :json => @play.errors,
-			                    :status => :unprocessable_entity }
-			end
-		end
+		redirect_to plays_path
 	end
 
 
