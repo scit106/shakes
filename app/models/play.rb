@@ -1,6 +1,7 @@
 class Play < ActiveRecord::Base
   attr_accessible :title, :source
-  
+  has_many :acts
+
   require 'open-uri'
 
 
@@ -9,10 +10,10 @@ def self.build source
 	play.source = source
 	xml_string = RestClient.get(source)
 	parsed_hash = Crack::XML.parse(xml_string)
-		# play.acts
-		# parsed_hash["PLAY"]["ACT"].each do |act|
-		# 	play.acts << Act.build act
-		# end
+	# play.acts 
+	parsed_hash["PLAY"]["ACT"].each do |act|
+			Act.build act
+		end
 		# rubydocs - array, hashes, enumerations
 		# grab acts
 		# pass to act builder

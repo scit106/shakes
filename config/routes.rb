@@ -2,7 +2,10 @@ Shakes::Application.routes.draw do
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
-resources :plays
+resources :plays do
+  resources :acts
+end
+
 
 root :to => 'plays#index'
 
